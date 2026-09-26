@@ -8,7 +8,7 @@ class DFlash2Qwen3AdaFlashModel(DFlash2Qwen3Model):
                  prefix: str = "", **kwargs) -> None:
         super().__init__(vllm_config=vllm_config, 
                          start_layer_id=start_layer_id, 
-                         prefix=prefix,kwargs=kwargs)
+                         prefix=prefix,kwargs=**kwargs)
         self.thresh_head = None
         draft_config = self.config.dflash_config
         vocab_size = vllm_config.model_config.get_vocab_size()
