@@ -15,8 +15,8 @@ dependencies = []
 vllm = ["vllm>=0.29.0"]
 
 [project.entry-points."vllm.general_plugins"]
-register_my_model = "src:register"
+register_my_model = "sealion_draft_models:register"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["src*"]
+include = ["sealion_draft_models*"]
