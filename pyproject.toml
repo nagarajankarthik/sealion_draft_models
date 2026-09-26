@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sealion-draft-models"
+version = "0.1.0"
+description = "Out-of-tree vLLM plugin for SEA-LION draft models."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[project.optional-dependencies]
+vllm = ["vllm>=0.29.0"]
+
+[project.entry-points."vllm.general_plugins"]
+register_my_model = "src:register"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
